@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-todo-app
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 10%
+      maxUnavailable: 10%
+  selector:
+    matchLabels:
+      app: todo-app-pod
+  template:
+    metadata:
+      labels:
+        app: todo-app-pod
+    spec:
+      containers:
+        - name: todo-app-cont
+          image: udaya06/todo-app:infratechuiasts
+          ports:
+            - containerPort: 80
+          env:
+            - name: VERSION
+              value: "1.0"
