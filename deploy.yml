@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: todo-app-cont
-          image: udaya06/todo-app:infratechuiasts
+          image: udaya06/todo-app:latest
           ports:
             - containerPort: 80
           env:
