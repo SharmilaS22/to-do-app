@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-todo-app-test
+  name: svc-todo-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: todo-app-pod
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30001
