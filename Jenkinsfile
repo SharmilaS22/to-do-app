@@ -43,7 +43,7 @@ stage('DockerPush') {
             steps {
                 sh '''
                     echo 'Deploying..'
-                    kubectl apply -f deployment.yaml
+                    kubectl apply -f deploy.yml
                     Kubectl apply -f loadbalancer.yml
 
                 '''
